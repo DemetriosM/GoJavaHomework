@@ -23,7 +23,7 @@ public class Solution {
 
         CollegeStudent collegeStudent1 = new CollegeStudent("Vladimir", "Zelensky", 4);
         CollegeStudent collegeStudent2 = new CollegeStudent("Pysanka", coursesTaken2);
-        CollegeStudent collegeStudent3 = new CollegeStudent("DTC", 9, 123123);
+        CollegeStudent collegeStudent3 = new CollegeStudent("Irina", "Volkova", 18, 3, coursesTaken1, "DTK", 95, 111111);
 
         SpecialStudent specialStudent1 = new SpecialStudent("Igor", "Kondratyuk", 5);
         SpecialStudent specialStudent2 = new SpecialStudent("Adele", coursesTaken2);

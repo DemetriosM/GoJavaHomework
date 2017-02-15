@@ -8,11 +8,11 @@ public class Course {
     private int hoursDuration;
     private String teacherName;
 
-    Course(Date startDate, String name){
+    public Course(Date startDate, String name){
         this.startDate = startDate;
         this.name = name;
     }
-    Course(int hoursDuration, String name, String teacherName){
+    public Course(int hoursDuration, String name, String teacherName){
         this.hoursDuration = hoursDuration;
         this.name = name;
         this.teacherName = teacherName;
