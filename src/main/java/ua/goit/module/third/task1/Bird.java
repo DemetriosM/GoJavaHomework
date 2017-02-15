@@ -2,17 +2,13 @@ package ua.goit.module.third.task1;
 
 public class Bird {
 
-    public static String sing(String word){
-        return String.format("I'm %s\n\n", word);
+    public void sing(String word){
+        System.out.printf("I'm %s\n", word);
     }
 
-    public static String sing(String[] words){
-        StringBuilder textOfSong = new StringBuilder();
+    public void sing(String[] words){
         for(String item : words){
-            textOfSong.append("I'm ");
-            textOfSong.append(item);
-            textOfSong.append("\n");
+            this.sing(item);
         }
-        return textOfSong.toString();
     }
 }

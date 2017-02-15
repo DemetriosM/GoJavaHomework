@@ -2,8 +2,9 @@ package ua.goit.module.third.task1;
 
 public class TaskOneMain {
     public static void main(String[] args) {
-        System.out.printf(Bird.sing("Bird"));
-        String wordsOfSong[] = {"walking", "flying", "singing", "Bird"};
-        System.out.printf(Bird.sing(wordsOfSong));
+        Bird bird = new Bird();
+        final String[] WORDSOFSONGS = {"walking", "flying", "singing", "Bird"};
+        bird.sing(WORDSOFSONGS[3]);
+        bird.sing(WORDSOFSONGS);
     }
 }
