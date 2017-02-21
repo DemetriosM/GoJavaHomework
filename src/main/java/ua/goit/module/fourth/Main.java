@@ -18,7 +18,7 @@ public class Main {
         chinaBankUser1 = new User(31, "Jackie", 2500, 12, "GEELY", 500, chinaBankUSD);
         chinaBankUser2 = new User(32, "Chan", 1200, 7, "GEELY", 500, chinaBankEUR);
 
-        BankSystemImpl banking = new BankSystemImpl();
+        BankSystem banking = new BankSystemImpl();
         System.out.printf(usBankUser1.toString());
         banking.withdrawOfUser(usBankUser1, 150);
         System.out.printf("Balance after withdrawing 150\n%s\n", usBankUser1.toString());

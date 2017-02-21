@@ -21,10 +21,8 @@ public class User {
 
     @Override
     public String toString(){
-        String userInformation;
-        userInformation = String.format("id: %d, name: %s, balance: %.2f, months of Employment: %d, company name: %s, salary: %d, bank: %s\n",
+        return String.format("id: %d, name: %s, balance: %.2f, months of Employment: %d, company name: %s, salary: %d, bank: %s\n",
                 this.id, this.name, this.balance, this.monthsOfEmployment, this.companyName, this.salary, this.bank.toString());
-        return userInformation;
     }
 
     public long getId() {
