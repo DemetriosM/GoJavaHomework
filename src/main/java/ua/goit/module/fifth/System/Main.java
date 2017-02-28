@@ -1,10 +1,11 @@
 package ua.goit.module.fifth.System;
 
+import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Controller controller = new Controller();
         System.out.println("Controller. Requests with different parameters\n");
         System.out.println("price 500 or less, persons not less than 2, city - Kiev, hotel - Ramada");
@@ -34,11 +35,11 @@ public class Main {
         Room deleteRoom = new Room(1003, 500, 4, new Date(), "Ramada", "Kiev");
         Room updateRoom = new Room(2003, 900, 4, new Date(), "Astoria", "Lviv");
         Room newRoom = new Room(5001, 400, 3, new Date(), "King", "Kiev");
-        System.out.printf("The initial array\n%s\n\n", Arrays.toString(controller.getDao().getAll()));
-        controller.getDao().findById(2002);
-        controller.getDao().delete(deleteRoom);
-        controller.getDao().update(updateRoom);
-        controller.getDao().save(newRoom);
-        System.out.printf("Array after manipulation\n%s", Arrays.toString(controller.getDao().getAll()));
+        System.out.printf("The initial array\n%s\n\n", Arrays.toString(controller.getAll()));
+        controller.findById(2002);
+        controller.delete(deleteRoom);
+        controller.update(updateRoom);
+        controller.save(newRoom);
+        System.out.printf("Array after manipulation\n%s", Arrays.toString(controller.getAll()));
     }
 }

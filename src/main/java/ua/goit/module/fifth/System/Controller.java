@@ -1,12 +1,13 @@
 package ua.goit.module.fifth.System;
 
+import java.text.ParseException;
 import java.util.Arrays;
 
 public class Controller {
     private API apis[] = new API[3];
     private DAO dao;
 
-    public Controller() {
+    public Controller() throws ParseException {
         apis[0] = new BookingComAPI();
         apis[1] = new TripAdvisorAPI();
         apis[2] = new GoogleAPI();
@@ -42,7 +43,23 @@ public class Controller {
         return sameRooms;
     }
 
-    public DAO getDao() {
-        return dao;
+    public Room save(Room room){
+        return dao.save(room);
+    }
+
+    public boolean delete(Room room){
+        return dao.delete(room);
+    }
+
+    public Room update(Room room){
+        return dao.update(room);
+    }
+
+    public Room findById(long id){
+        return dao.findById(id);
+    }
+
+    public Room[] getAll(){
+        return dao.getAll();
     }
 }

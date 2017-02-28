@@ -1,26 +1,24 @@
 package ua.goit.module.fifth.System;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 public class DAOImpl implements DAO{
     private Room[] rooms;
-    private Calendar dateAvailableFrom;
 
-    public DAOImpl() {
-        dateAvailableFrom = new GregorianCalendar(2017, Calendar.MARCH, 21);
+    public DAOImpl() throws ParseException {
         this.rooms = new Room[]{
-                new Room(1003, 500, 4, dateAvailableFrom.getTime(), "Ramada", "Kiev"),
-                new Room(1004, 600, 2, dateAvailableFrom.getTime(), "Rits", "Kiev"),
-                new Room(2002, 550, 3, dateAvailableFrom.getTime(), "Astoria", "Lviv"),
-                new Room(2003, 650, 3, dateAvailableFrom.getTime(), "Astoria", "Lviv"),
-                new Room(2004, 350, 2, dateAvailableFrom.getTime(), "Atlas", "Lviv"),
-                new Room(3001, 240, 2, dateAvailableFrom.getTime(), "Avrora", "Kharkiv"),
-                new Room(3002, 310, 3, dateAvailableFrom.getTime(), "Avrora", "Kharkiv"),
-                new Room(3003, 410, 2, dateAvailableFrom.getTime(), "City Club ", "Kharkiv"),
-                new Room(3004, 570, 3, dateAvailableFrom.getTime(), "City Club ", "Kharkiv"),
-                new Room(4004, 50, 1, dateAvailableFrom.getTime(), "Hostel", "Dnepr")
+                new Room(1003, 500, 4, (new SimpleDateFormat("dd-MM-yyyy")).parse("01-03-2017"), "Ramada", "Kiev"),
+                new Room(1004, 600, 2, (new SimpleDateFormat("dd-MM-yyyy")).parse("04-03-2017"), "Rits", "Kiev"),
+                new Room(2002, 550, 3, (new SimpleDateFormat("dd-MM-yyyy")).parse("23-03-2017"), "Astoria", "Lviv"),
+                new Room(2003, 650, 3, (new SimpleDateFormat("dd-MM-yyyy")).parse("02-03-2017"), "Astoria", "Lviv"),
+                new Room(2004, 350, 2, (new SimpleDateFormat("dd-MM-yyyy")).parse("15-03-2017"), "Atlas", "Lviv"),
+                new Room(3001, 240, 2, (new SimpleDateFormat("dd-MM-yyyy")).parse("14-03-2017"), "Avrora", "Kharkiv"),
+                new Room(3002, 310, 3, (new SimpleDateFormat("dd-MM-yyyy")).parse("27-03-2017"), "Avrora", "Kharkiv"),
+                new Room(3003, 410, 2, (new SimpleDateFormat("dd-MM-yyyy")).parse("09-03-2017"), "City Club ", "Kharkiv"),
+                new Room(3004, 570, 3, (new SimpleDateFormat("dd-MM-yyyy")).parse("06-03-2017"), "City Club ", "Kharkiv"),
+                new Room(4004, 50, 1, (new SimpleDateFormat("dd-MM-yyyy")).parse("05-03-2017"), "Hostel", "Dnepr")
         };
     }
 

@@ -19,30 +19,6 @@ public class Room {
         this.cityName = cityName;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Room room = (Room) o;
-        if (getPrice() != room.getPrice() || getPersons() != room.getPersons()) return false;
-        return getCityName() != null ? getCityName().equals(room.getCityName()) : room.getCityName() == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getPrice();
-        result = 31 * result + getPersons();
-        result = 31 * result + (getCityName() != null ? getCityName().hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("id: %d, city: %s hotel: %s, price: %d, persons: %d, available from %tF\n",
-                this.getId(), this.getCityName(), this.getHotelName(), this.getPrice(), this.getPersons(),
-                this.getDateAvailableFrom());
-    }
-
     public long getId() {
         return id;
     }
@@ -89,5 +65,29 @@ public class Room {
 
     public void setCityName(String cityName) {
         this.cityName = cityName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        if (getPrice() != room.getPrice() || getPersons() != room.getPersons()) return false;
+        return getCityName() != null ? getCityName().equals(room.getCityName()) : room.getCityName() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getPrice();
+        result = 31 * result + getPersons();
+        result = 31 * result + (getCityName() != null ? getCityName().hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("id: %d, city: %s hotel: %s, price: %d, persons: %d, available from %td-%tm-%tY\n",
+                this.getId(), this.getCityName(), this.getHotelName(), this.getPrice(), this.getPersons(),
+                this.getDateAvailableFrom(), this.getDateAvailableFrom(), this.getDateAvailableFrom());
     }
 }

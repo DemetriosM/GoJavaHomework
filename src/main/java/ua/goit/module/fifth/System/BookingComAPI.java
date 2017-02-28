@@ -1,35 +1,19 @@
 package ua.goit.module.fifth.System;
 
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
-public class BookingComAPI implements API {
+public class BookingComAPI extends BaseAPI {
     private Room[] rooms;
-    private Calendar dateAvailableFrom;
 
-    public BookingComAPI() {
-        dateAvailableFrom = new GregorianCalendar(2017, Calendar.MARCH, 1);
+    public BookingComAPI() throws ParseException {
         rooms = new Room[]{
-                new Room(1001, 300, 2, dateAvailableFrom.getTime(), "Ramada", "Kiev"),
-                new Room(1002, 400, 3, dateAvailableFrom.getTime(), "Atlas", "Kiev"),
-                new Room(1003, 500, 2, dateAvailableFrom.getTime(), "Ramada", "Kiev"),
-                new Room(1004, 600, 2, dateAvailableFrom.getTime(), "Rits", "Kiev"),
-                new Room(1005, 800, 3, dateAvailableFrom.getTime(), "Rits", "Lviv"),
+                new Room(1001, 300, 2, (new SimpleDateFormat("dd-MM-yyyy")).parse("08-03-2017"), "Ramada", "Kiev"),
+                new Room(1002, 400, 3, (new SimpleDateFormat("dd-MM-yyyy")).parse("11-03-2017"), "Atlas", "Kiev"),
+                new Room(1003, 500, 2, (new SimpleDateFormat("dd-MM-yyyy")).parse("07-03-2017"), "Ramada", "Kiev"),
+                new Room(1004, 600, 2, (new SimpleDateFormat("dd-MM-yyyy")).parse("15-03-2017"), "Rits", "Kiev"),
+                new Room(1005, 800, 3, (new SimpleDateFormat("dd-MM-yyyy")).parse("24-03-2017"), "Rits", "Lviv"),
         };
-    }
-
-    @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] foundRooms = new Room[0];
-        for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i].getPrice() <= price && rooms[i].getPersons() >= persons &&
-                    rooms[i].getCityName().equals(city) && rooms[i].getHotelName().equals(hotel)){
-                foundRooms = Arrays.copyOf(foundRooms, foundRooms.length+1);
-                foundRooms[foundRooms.length-1] = rooms[i];
-            }
-        }
-        return foundRooms;
     }
 
     @Override
