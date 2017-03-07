@@ -25,5 +25,31 @@ Make sure nobody can inherit your ArraysUtils.
 Create class ArraysMain with a main method, where check ArraysUtils class methods (use a random array).
 
 
+TASK 6.2
 
+Create User class with fields
+
+long id
+String firstName
+lastName
+int salary
+int balance
+
+and constructor with all fields.
+
+Note, class User is immutable.
+
+
+TASK 6.3
+
+Create сlass UserUtils with following methods
+User[] uniqueUsers(User[] users) – finds and returns unique users (users are equal when all their field are equal)
+User[] usersWithContitionalBalance(User[] users, int balance) - finds and returns the user whose balance is equal to given balance
+User[] paySalaryToUsers(User[] users) – pay salary to each user balance
+long[] getUsersId(User[] users) - returns an array of user IDs
+User[] deleteEmptyUsers(User[] users) – finds and removes empty elements of the array (as a result returns a new array with smaller size)
+
+Make sure paySalaryToUsers and getUsersId methods can’t be overriden in other classes.
+
+Create UsersMain class with main method where create some test users and demonstrate how each method from UserUtils works.
 
