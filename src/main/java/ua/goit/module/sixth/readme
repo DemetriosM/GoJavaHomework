@@ -53,3 +53,19 @@ Make sure paySalaryToUsers and getUsersId methods can’t be overriden in other 
 
 Create UsersMain class with main method where create some test users and demonstrate how each method from UserUtils works.
 
+
+TASK 6.4
+
+Create interface Citizen with method sayHello ().
+Create a class-factory CitizenFactory, which statically generates сcitizens of different countries.
+
+Use the following nested sub-classes:
+- Englishman
+- Chinese
+- Russian
+- Italian
+
+Each of the sub-class implements the interface Citizen. sayHello () method has to display "Hello" phrase in different languages.
+Make sure that the nested classes are not available outside the class-factory.
+Create CitizenMain class with a main method, where check how CitizenFactory works.
+
