@@ -1,0 +1,29 @@
+TASK 6.1
+
+Create ArraysUtils with following methods
+sum(int array[])
+min(int array[])
+max(int array[])
+maxPositive(int array[])
+multiplication  (int array[])
+modulus(int array[])
+secondLargest(int array[])
+
+Copy methods realization from homework 2.1
+
+In addition add new methods
+
+int[] reverse(int[] array) - arranges array elements backwards
+int[] findEvenElements(int[] array) - finds even numbers in the array
+
+Class ArraysUtils must match the pattern “Utility class”:
+- You cannot create an instance of this class
+- All class methods are static
+
+Make sure nobody can inherit your ArraysUtils.
+
+Create class ArraysMain with a main method, where check ArraysUtils class methods (use a random array).
+
+
+
+
