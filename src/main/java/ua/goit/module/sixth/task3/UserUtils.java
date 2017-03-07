@@ -32,9 +32,10 @@ public class UserUtils {
     }
 
     public final User[] paySalaryToUsers(User[] users){
-        for(User user : users){
-            if (user != null){
-                user.setBalance(user.getBalance() + user.getSalary());
+        for(int i=0; i<users.length; i++){
+            if (users[i] != null){
+                users[i] = new User(users[i].getId(), users[i].getFirstName(), users[i].getFirstName(),
+                        users[i].getSalary(), users[i].getSalary()+users[i].getBalance());
             }
         }
         return users;
