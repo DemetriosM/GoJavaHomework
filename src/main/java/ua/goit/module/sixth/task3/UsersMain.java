@@ -16,14 +16,13 @@ public class UsersMain {
                 new User (1007, "Denis", "Pavlov", 100, 700),
                 null
         };
-        UserUtils userUtils = new UserUtils();
 
         System.out.println(Arrays.toString(users));
-        System.out.printf("\n\nunique users:\n%s", Arrays.toString(userUtils.uniqueUsers(users)));
-        System.out.printf("\n\nusers with conditional balance:\n%s", Arrays.toString(userUtils.usersWithConditionalBalance(users, 700)));
-        userUtils.paySalaryToUsers(users);
+        System.out.printf("\n\nunique users:\n%s", Arrays.toString(UserUtils.uniqueUsers(users)));
+        System.out.printf("\n\nusers with conditional balance:\n%s", Arrays.toString(UserUtils.usersWithConditionalBalance(users, 700)));
+        UserUtils.paySalaryToUsers(users);
         System.out.printf("\n\nusers after payment salary:\n%s", Arrays.toString(users));
-        System.out.printf("\n\nusers id %s\n", Arrays.toString(userUtils.getUsersId(users)));
-        System.out.printf("\n\narray after deleting empty elements %s\n", Arrays.toString(userUtils.deleteEmptyUsers(users)));
+        System.out.printf("\n\nusers id %s\n", Arrays.toString(UserUtils.getUsersId(users)));
+        System.out.printf("\n\narray after deleting empty elements %s\n", Arrays.toString(UserUtils.deleteEmptyUsers(users)));
     }
 }

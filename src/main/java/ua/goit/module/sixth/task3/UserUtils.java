@@ -6,7 +6,10 @@ import java.util.Arrays;
 
 public class UserUtils {
 
-    public User[] uniqueUsers(User[] users){
+    private UserUtils(){}
+
+    public static User[] uniqueUsers(User[] users){
+        User[] unique = new User[0];
         for (int i = 0; i < users.length; i++){
             if (users[i] != null) {
                 for (int j = i + 1; j < users.length; j++) {
@@ -14,12 +17,13 @@ public class UserUtils {
                         users[j] = null;
                     }
                 }
+                unique = increaseUsersArray(unique, users[i]);
             }
         }
-        return users;
+        return unique;
     }
 
-    public User[] usersWithConditionalBalance(User[] users, int balance){
+    public static User[] usersWithConditionalBalance(User[] users, int balance){
         User[] usersConditionalBalance = new User[0];
         for (int i = 0; i < users.length; i++) {
             if (users[i] != null) {
@@ -31,7 +35,7 @@ public class UserUtils {
         return usersConditionalBalance;
     }
 
-    public final User[] paySalaryToUsers(User[] users){
+    public static User[] paySalaryToUsers(User[] users){
         for(int i=0; i<users.length; i++){
             if (users[i] != null){
                 users[i] = new User(users[i].getId(), users[i].getFirstName(), users[i].getFirstName(),
@@ -41,7 +45,7 @@ public class UserUtils {
         return users;
     }
 
-    public final long[] getUsersId(User[] users){
+    public static long[] getUsersId(User[] users){
         long[] idArray = new long[0];
         for (int i = 0; i < users.length; i++) {
              if (users[i] !=null){
@@ -52,7 +56,7 @@ public class UserUtils {
         return idArray;
     }
 
-    public User[] deleteEmptyUsers(User[] users){
+    public static User[] deleteEmptyUsers(User[] users){
         User[] usersWithoutEmptyElements = new User[0];
         for (int i = 0; i < users.length; i++) {
             if (users[i] != null) {
@@ -62,7 +66,7 @@ public class UserUtils {
         return usersWithoutEmptyElements;
     }
 
-    private User[] increaseUsersArray(User[] users, User user){
+    private static User[] increaseUsersArray(User[] users, User user){
         users = Arrays.copyOf(users, users.length + 1);
         users[users.length-1] = user;
         return users;
