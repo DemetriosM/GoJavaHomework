@@ -31,11 +31,11 @@ public class Main {
         orders.add(new Order(200, Currency.EUR, "TV", "Saturn", users[7]));
         orders.add(new Order(1550, Currency.EUR, "Tablet", "Rozetka", users[8]));
         orders.add(new Order(1700, Currency.EUR, "Tablet", "Rozetka", users[9]));
-        System.out.printf("initial list: \n%s\n", Arrays.toString(orders.toArray()));
+        System.out.printf("initial list: \n%s\n", orders);
 
         System.out.println("\nafter sort by price in decrease order:");
         orders.sort((Order o1, Order o2) -> o2.getPrice() - o1.getPrice());
-        System.out.println(Arrays.toString(orders.toArray()));
+        System.out.println(orders);
 
         System.out.println("\nafter sort by price in increase order and User city:");
         orders.sort((Order o1, Order o2) -> {
@@ -45,7 +45,7 @@ public class Main {
                 }
                 return margin;
         });
-        System.out.println(Arrays.toString(orders.toArray()));
+        System.out.println(orders);
 
         System.out.println("\nafter sort by itemName and ShopIdentificator and User city:");
         orders.sort((Order o1, Order o2) -> {
@@ -59,24 +59,21 @@ public class Main {
                 }
                 return marginItemName;
         });
-        System.out.println(Arrays.toString(orders.toArray()));
+        System.out.println(orders);
 
         deleteDuplicates(orders);
-        System.out.printf("\n\"orders\" after delete duplicates: \n%s\n",
-                Arrays.toString(orders.toArray()));
+        System.out.printf("\n\"orders\" after delete duplicates: \n%s\n",orders);
 
         deleteWherePriceLess(orders, 1500);
-        System.out.printf("\n\"orders\" after delete items where price less than 1500: \n%s\n",
-                Arrays.toString(orders.toArray()));
+        System.out.printf("\n\"orders\" after delete items where price less than 1500: \n%s\n", orders);
 
         List<List<Order>> ordersSeparatedByCurrency = separateByCurrency(orders);
         System.out.printf("\n\"ordersClone\" after separate for two list - orders in USD and EUR: \n%s\n%s\n",
-                Arrays.toString(ordersSeparatedByCurrency.get(0).toArray()),
-                Arrays.toString(ordersSeparatedByCurrency.get(1).toArray()));
+                ordersSeparatedByCurrency.get(0), ordersSeparatedByCurrency.get(1));
 
         List<List<Order>> ordersSeparatedByCity = separateByUniqueCity(orders);
         System.out.printf("\n\"ordersClone\" after separate by unique cities are in User: \n%s\n",
-                Arrays.toString(ordersSeparatedByCity.toArray()));
+                ordersSeparatedByCity);
     }
 
     private static void deleteDuplicates(List<Order> orders) {
