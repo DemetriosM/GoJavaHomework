@@ -1,8 +1,6 @@
 package ua.goit.module.seventh.task4;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
