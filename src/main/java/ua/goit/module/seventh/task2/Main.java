@@ -43,7 +43,7 @@ public class Main {
                 if (margin == 0) {
                     return o1.getUser().getCity().compareTo(o2.getUser().getCity());
                 }
-                return margin;
+                return o1.getPrice() - o2.getPrice();
         });
         System.out.println(orders);
 
