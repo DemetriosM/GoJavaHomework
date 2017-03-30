@@ -42,10 +42,10 @@ public class ManageSystem  {
     }
 
     public static <T extends Order> boolean checkOrdersForContainLastName(Set<T> orders, String lastName) {
-        return orders.stream().anyMatch(o->o.getUser().getLastName()==lastName);
+        return orders.stream().anyMatch(o->o.getUser().getLastName().equals(lastName));
     }
 
     public static <T extends Order> void deleteOrdersInUSD(Set<T> orders, Currency currency) {
-        orders.removeIf(o->o.getCurrency()== currency);
+        orders.removeIf(o->o.getCurrency().equals(currency));
     }
 }
