@@ -46,14 +46,14 @@ public class Main {
     }
 
     private static String readeUseTryWithResources(){
-        String str = "";
         try (BufferedReader reader = new BufferedReader(
                 new FileReader(FILE_PATH))){
+            String str = "";
             str = reader.lines().collect(Collectors.joining("\n"));
+            return str;
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
         }
-
-        return str;
     }
 }

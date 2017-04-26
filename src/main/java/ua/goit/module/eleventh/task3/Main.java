@@ -22,9 +22,9 @@ public class Main {
     }
 
     public static File fileContentMerger(Map<String, String> map) {
-        String str="";
         File file = new File(FILE_PATH);
         try (BufferedReader reader = new BufferedReader(new FileReader(file.getPath()))){
+            String str="";
             str = reader.lines().collect(Collectors.joining("\n"));
             System.out.printf("text.txt before append text:\n%s\n", str);
             for(Map.Entry<String, String> item : map.entrySet()){
