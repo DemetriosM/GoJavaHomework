@@ -24,11 +24,11 @@ public class Main {
     }
 
     private static String readeUseTry(){
-        String str = "";
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(
                 new FileReader(FILE_PATH));
+            String str = "";
             str = reader.lines().collect(Collectors.joining("\n"));
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,11 +38,10 @@ public class Main {
                     reader.close();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    throw new RuntimeException(e.getMessage());
                 }
             }
         }
-
-        return str;
     }
 
     private static String readeUseTryWithResources(){
