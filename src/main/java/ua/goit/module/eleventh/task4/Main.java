@@ -30,15 +30,16 @@ public class Main {
                 new FileReader(FILE_PATH));
             String str = "";
             str = reader.lines().collect(Collectors.joining("\n"));
+            return str;
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
         } finally {
             if (reader != null){
                 try{
                     reader.close();
                 } catch (IOException e) {
                     e.printStackTrace();
-                    throw new RuntimeException(e.getMessage());
                 }
             }
         }
